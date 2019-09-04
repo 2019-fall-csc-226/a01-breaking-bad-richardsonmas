@@ -1,10 +1,8 @@
 # A01: Breaking Bad
 
-Name: ____________
+Name: Mason Richardson
 
-Name (if working with a partner): ____________
+Repository Link:https://github.com/2019-fall-csc-226/a01-breaking-bad-richardsonmas
 
-Repository Link: ______________
-
-Google Doc Link: ______________
+Google Doc Link: https://docs.google.com/document/d/1uoohfpDEQAWHeOPV_oJFFKQF5wr_zBfpvemIgvL0pTM/edit#
 
