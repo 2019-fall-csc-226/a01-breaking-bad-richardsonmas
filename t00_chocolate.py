@@ -21,7 +21,7 @@ entered_name = input("Please enter your name: ")
 print("Hello " + entered_name + "! \n")
 
 num_boxes = int(input("How many chocolate boxes you would like? "))
-num_lbs = int(input("How many lbs of chocolate in a box? \n"))
+#num_lbs = int(input("How many lbs of chocolate in a box? \n"))
 
 
 # Section 2: Computation Section
