@@ -20,7 +20,6 @@
 ######################################################################
 
 import time
-import sys
 import os
 
 clear = lambda: os.system('cls')
