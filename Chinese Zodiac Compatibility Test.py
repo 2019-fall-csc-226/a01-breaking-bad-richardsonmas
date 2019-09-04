@@ -11,7 +11,8 @@
 # Acknowledgements:
 #   Original Author: Dr. Scott Heggen
 #   Class Objects Help: Corey Schafer https://www.youtube.com/watch?v=ZDa-Z5JzLYM&
-#
+#   Clear screen help: Senthil Kumaran and jesterjunk on Stack Overflow https://stackoverflow.com/questions/4810537/how-to-clear-the-screen-in-python
+
 ######################################################################
 
 # Remember to read the detailed notes about each task in the A01 document.
@@ -19,6 +20,10 @@
 ######################################################################
 
 import time
+import sys
+import os
+
+clear = lambda: os.system('cls')
 
 # Here are the two classes, person and sign. This is where I keep information about the signs, and how I add to or check the people's attributes.
 class Person:
@@ -65,13 +70,15 @@ Pig = Sign(["1935", "1947", "1959", "1971", "1983", "1995", "2007"], ["Pig", "Ra
 # This function gets the information I need from the user about themselves.
 def userinfocollector():
     user.name = input("What is your name?\n")
+    clear()
     print("Hello " + user.name + ", welcome to the Chinese Zodiac Compatibility Test!!")
-    time.sleep(2)
+    time.sleep(1.2)
     user.birthyear = input("What year were you born? (Please give full year ex. 1993): \n")
+    clear()
     print("...")
     time.sleep(0.5)
     print(user.birthyear)
-
+    time.sleep(0.5)
 
 # TODO Check the year using if conditionals, and print the correct animal for that year.
 # See the a01_pets.py for examples
@@ -140,7 +147,8 @@ def findsign():
         user.worst = Pig.worst
     else:
         print("Sign not found")
-
+    time.sleep(3)
+    clear()
 
 ######################################################################
 # (Required) Task 2
@@ -149,7 +157,7 @@ def findsign():
 #  Now the process starts over, but working on the friend instance instead.
 def friendinfocollector():
     friend.name = input("What is your friend's name?\n")
-    time.sleep(1)
+    clear()
     friend.birthyear = input("What year was " + friend.name + " born? (Please give full year ex. 1993): \n")
     print("...")
     time.sleep(0.5)
@@ -161,42 +169,72 @@ def friendfindsign():
     if friend.birthyear in Rat.year:
         print(friend.name + " is a Rat! \n")
         friend.sign = "Rat"
+        friend.best = Rat.best
+        friend.worst = Rat.worst
     elif friend.birthyear in Ox.year:
         print(friend.name + " is an Ox! \n")
         friend.sign = "Ox"
+        friend.best = Ox.best
+        friend.worst = Ox.worst
     elif friend.birthyear in Tiger.year:
         print(friend.name + " is a Tiger! \n")
         friend.sign = "Tiger"
+        friend.best = Tiger.best
+        friend.worst = Tiger.worst
     elif friend.birthyear in Rabbit.year:
         print(friend.name + " is a Rabbit! \n")
         friend.sign = "Rabbit"
+        friend.best = Rabbit.best
+        friend.worst = Rabbit.worst
     elif friend.birthyear in Dragon.year:
         print(friend.name + " is a Dragon! \n")
         friend.sign = "Dragon"
+        friend.best = Dragon.best
+        friend.worst = Dragon.worst
     elif friend.birthyear in Snake.year:
         print(friend.name + " is a Snake! \n")
         friend.sign = "Snake"
+        friend.best = Snake.best
+        friend.worst = Snake.worst
     elif friend.birthyear in Horse.year:
         print(friend.name + " is a Horse! \n")
         friend.sign = "Horse"
+        friend.best = Horse.best
+        friend.worst = Horse.worst
     elif friend.birthyear in Goat.year:
         print(friend.name + " is a Goat! \n")
         friend.sign = "Goat"
+        friend.best = Goat.best
+        friend.worst = Goat.worst
     elif friend.birthyear in Monkey.year:
         print(friend.name + " is a Monkey! \n")
         friend.sign = "Monkey"
+        friend.best = Monkey.best
+        friend.worst = Monkey.worst
     elif friend.birthyear in Rooster.year:
         print(friend.name + " is a Rooster! \n")
         friend.sign = "Rooster"
+        friend.best = Rooster.best
+        friend.worst = Rooster.worst
     elif friend.birthyear in Dog.year:
         print(friend.name + " is a Dog! \n")
         friend.sign = "Dog"
+        friend.best = Dog.best
+        friend.worst = Dog.worst
     elif friend.birthyear in Pig.year:
         print(friend.name + " is a Pig! \n")
         friend.sign = "Pig"
+        friend.best = Pig.best
+        friend.worst = Pig.worst
     else:
         print("Sign not found")
-
+    if user.sign == friend.sign:
+        time.sleep(1)
+        print("Hey, you two are the same sign!")
+    else:
+        pass
+    time.sleep(3)
+    clear()
 
 
 ######################################################################
@@ -210,18 +248,22 @@ def friendfindsign():
 # and responds accordingly to three possible outcomes, good match, bad match and everything else lol.
 def compatibilitycheck():
     print("Now we will check your compatibility with " + friend.name + "!! \n")
+    time.sleep(2.7)
+    clear()
     time.sleep(.5)
     print("...")
     time.sleep(.5)
     print("...")
     time.sleep(.5)
     print("...")
-    if user.sign in friend.worst:
+    clear()
+    if user.sign in friend.best:
         print("The " + user.sign + " and the " + friend.sign + " are very compatible!! \n")
-    elif user.best == friend.best:
+    elif user.sign == friend.worst:
         print("The " + user.sign + " and the " + friend.sign + " are not very compatible.. \nBut anyone can be friends! \n")
     else:
         print("Nothing in the stars suggests a good or bad connection between the " + user.sign + " and the " + friend.sign + ". \nYou are the deciders of your own fate! \n")
+    time.sleep(20)
 
 # TODO print if you are a strong match, no match, or in between
 
